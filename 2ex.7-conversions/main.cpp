@@ -11,7 +11,7 @@ enum sourceState {
 };
 
 bool isDigit(char c);
-void decToBase(int decimal, int base);
+void printDecToBase(int decimal, int base);
 void printStandardBases(int num);
 void printFlagBase(int num, char baseFlag);
 
@@ -79,7 +79,7 @@ int main(int argc, char* argv[])
                 base *= 10;
                 base += argv[1][i] - '0';
             }
-            decToBase(number, base);
+            printDecToBase(number, base);
         }
     }
 
@@ -93,7 +93,7 @@ bool isDigit(char c)
 
 char intToChar(int num);
 
-void decToBase(int decimal, int base)
+void printDecToBase(int decimal, int base)
 {
     if (decimal == 0) {
         cout << 0 << '\n';
@@ -131,35 +131,35 @@ char intToChar(int num)
 void printStandardBases(int num)
 {
     cout << "bin: ";
-    decToBase(num, 2);
+    printDecToBase(num, 2);
 
     cout << "oct: ";
-    decToBase(num, 8);
+    printDecToBase(num, 8);
 
     cout << "dec: ";
-    decToBase(num, 10);
+    printDecToBase(num, 10);
 
     cout << "hex: ";
-    decToBase(num, 16);
+    printDecToBase(num, 16);
 }
 
 void printFlagBase(int num, char baseFlag)
 {
     switch (baseFlag) {
     case 'b':
-        decToBase(num, 2);
+        printDecToBase(num, 2);
         break;
 
     case 'o':
-        decToBase(num, 8);
+        printDecToBase(num, 8);
         break;
 
     case 'd':
-        decToBase(num, 10);
+        printDecToBase(num, 10);
         break;
 
     case 'x':
-        decToBase(num, 16);
+        printDecToBase(num, 16);
         break;
     }
 }
